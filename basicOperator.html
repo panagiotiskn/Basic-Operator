@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This program calculates basic operations with 2 numbers</title>
+    <script>
+        function calculate()
+        {
+            var result;
+            var operator = document.getElementById("operations").value;
+            var value1 = parseFloat(document.getElementById("firstNumber").value);
+            var value2 = parseFloat(document.getElementById("secondNumber").value);
+
+    
+            switch (operator) {
+                case "+":
+                result = value1 + value2;           
+                break;
+                case "-":        
+                result = value1 - value2;
+                break;
+                case "*":
+                result = value1 * value2;            
+                break;
+                case "/":
+                result = value1 / value2;       
+                break;
+            }
+            var str = "The result of the operation is: " + result;
+            document.getElementById("result").innerHTML = str;
+        }
+</script>
+</head>
+<body>
+
+<label for="firstNumber">First number:</label>
+<input type="text" id="firstNumber" name="firstNumber"><br><br>
+
+<label for="secondNumber">Second number:</label>
+<input type="text" id="secondNumber" name="secondNumber"><br><br>
+
+<select name="operations" id="operations">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+
+
+
+<button onclick="calculate()">Calculate</button>
+<p id="result"> </p>
+
+
+</body>
+</html>
+
+
